@@ -66,13 +66,12 @@
 
 <script>
     const dialogueLines = [
-        "Connecting to server...",
-        "Verifying client integrity...",
-        "Scanning for unauthorized modifications...",
-        "Suspicious activity detected...",
-        "You shouldn't be here...",
-        "They are watching you...",
+        "Welcome..."
+        "I see you have came to my humble home."
+        "Did you Come here Because I told you to?"
         "..."
+        "Torrent"
+        "You Are not welcome here......"
     ];
 
     const box = document.getElementById("box");
@@ -103,7 +102,7 @@
                 playDialogue();
             }, isLast);
         } else {
-            jumpscare();
+            setTimeout(jumpscare, 1000)
         }
     }
 
