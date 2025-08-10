@@ -24,7 +24,7 @@
         width: 600px;
         height: 150px;
         box-sizing: border-box;
-        font-size: 14px; /* Smaller size for pixel font */
+        font-size: 14px; /* Pixel font size */
         white-space: pre-line;
         overflow: hidden;
         line-height: 1.5;
@@ -61,16 +61,16 @@
 <body>
 
 <div id="box"></div>
-<img id="scareImage" src="https://i.postimg.cc/rmYCnrC4/2025-08-10-195824629.png" alt="Scary Face">
-<audio id="scareSound" src="scream.mp3"></audio>
+<img id="scareImage" src="https://i.imgur.com/qrrKpV2.jpg" alt="Scary Face">
+<audio id="scareSound" src="https://www.myinstants.com/media/sounds/scream.mp3"></audio>
 
 <script>
     const dialogueLines = [
         "Welcome..."
         "I see you have came to my humble home."
         "Did you Come here Because I told you to?"
-        "..."
-        "Torrent"
+        "He He He..."
+        "Torrent..."
         "You Are not welcome here......"
     ];
 
@@ -87,7 +87,12 @@
                 i++;
                 setTimeout(typeChar, speed);
             } else {
-                setTimeout(callback, isLast ? 1000 : 500);
+                // If last line, wait 1 sec before jumpscare
+                if (isLast) {
+                    setTimeout(jumpscare, 1000);
+                } else {
+                    setTimeout(callback, 500);
+                }
             }
         }
         typeChar();
@@ -101,8 +106,6 @@
                 lineIndex++;
                 playDialogue();
             }, isLast);
-        } else {
-            setTimeout(jumpscare, 1000)
         }
     }
 
